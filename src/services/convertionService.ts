@@ -13,6 +13,8 @@ export const convertionService = {
         ['to_currency_name', 'toCurrencyName'],
         ['from_currency_value', 'fromCurrencyValue'],
         ['to_currency_value', 'toCurrencyValue'],
+        ['from_currency_ratio', 'fromCurrencyRatio'],
+        ['to_currency_ratio', 'toCurrencyRatio'],
         ['created_at', 'createdAt']],
       where: { userId }
     })
@@ -23,7 +25,9 @@ export const convertionService = {
   create: async (userId: number,
     fromCurrencyId: number, toCurrencyId: number,
     fromCurrencyName: string, toCurrencyName: string,
-    fromCurrencyValue: number, toCurrencyValue: number,) => {
+    fromCurrencyValue: number, toCurrencyValue: number,
+    fromCurrencyRatio: number,
+    toCurrencyRatio: number) => {
     const convertion = await Convertion.create({
       userId,
       fromCurrencyId,
@@ -32,6 +36,8 @@ export const convertionService = {
       toCurrencyName,
       fromCurrencyValue,
       toCurrencyValue,
+      fromCurrencyRatio,
+      toCurrencyRatio
     })
 
     return convertion

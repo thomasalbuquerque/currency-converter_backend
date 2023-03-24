@@ -13,6 +13,8 @@ export interface Convertion {
   fromCurrencyValue: number
   toCurrencyValue: number
   created_at: Date
+  fromCurrencyRatio: number
+  toCurrencyRatio: number
 }
 
 export interface ConvertionCreationAttributes extends Optional<Convertion, 'id' | 'created_at'> { }
@@ -58,6 +60,14 @@ export const Convertion = sequelize.define<ConvertionInstance, Convertion>('Conv
     type: DataTypes.DECIMAL
   },
   toCurrencyValue: {
+    allowNull: false,
+    type: DataTypes.DECIMAL
+  },
+  fromCurrencyRatio: {
+    allowNull: false,
+    type: DataTypes.DECIMAL
+  },
+  toCurrencyRatio: {
     allowNull: false,
     type: DataTypes.DECIMAL
   },

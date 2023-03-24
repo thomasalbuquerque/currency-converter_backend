@@ -42,6 +42,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DataTypes.DECIMAL
       },
+      from_currency_ratio: {
+        allowNull: false,
+        type: Sequelize.DataTypes.DECIMAL
+      },
+      to_currency_ratio: {
+        allowNull: false,
+        type: Sequelize.DataTypes.DECIMAL
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE

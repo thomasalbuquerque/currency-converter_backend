@@ -22,7 +22,7 @@ export const convertionsController = {
   // POST /convertions
   save: async (req: AuthenticatedRequest, res: Response) => {
     const userId = req.user!.id;
-    const { fromCurrencyId, toCurrencyId, fromCurrencyName, toCurrencyName, fromCurrencyValue, toCurrencyValue } =
+    const { fromCurrencyId, toCurrencyId, fromCurrencyName, toCurrencyName, fromCurrencyValue, toCurrencyValue, fromCurrencyRatio, toCurrencyRatio } =
       req.body;
 
     try {
@@ -33,7 +33,9 @@ export const convertionsController = {
         fromCurrencyName,
         toCurrencyName,
         fromCurrencyValue,
-        toCurrencyValue
+        toCurrencyValue,
+        fromCurrencyRatio,
+        toCurrencyRatio
       );
       return res.status(201).json(convertion);
     } catch (err) {
