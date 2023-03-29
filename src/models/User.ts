@@ -9,7 +9,6 @@ type CheckPasswordCallback = (err: Error | undefined, isSame: boolean) => void;
 export interface User {
   id: number;
   firstName: string;
-  lastName: string;
   email: string;
   password: string;
   role: 'admin' | 'user';
@@ -35,10 +34,6 @@ export const User = sequelize.define<UserInstance, User>(
       type: DataTypes.INTEGER,
     },
     firstName: {
-      allowNull: false,
-      type: DataTypes.STRING,
-    },
-    lastName: {
       allowNull: false,
       type: DataTypes.STRING,
     },

@@ -17,14 +17,12 @@ const userResourceOptions: ResourceOptions = {
   },
   editProperties: [
     'firstName',
-    'lastName',
     'email',
     'password',
     'role'
   ],
   filterProperties: [
     'firstName',
-    'lastName',
     'email',
     'role',
     'createdAt',
@@ -39,7 +37,6 @@ const userResourceOptions: ResourceOptions = {
   showProperties: [
     'id',
     'firstName',
-    'lastName',
     'email',
     'role',
     'createdAt',

@@ -9,7 +9,6 @@ export const userService = {
       attributes: [
         'id',
         ['first_name', 'firstName'],
-        ['last_name', 'lastName'],
         'email',
         'password',
         ['created_at', 'createdAt']
@@ -26,7 +25,6 @@ export const userService = {
 
   update: async (id: number, attributes: {
     firstName: string
-    lastName: string
     email: string
   }) => {
     const [affectedRows, updatedUsers] = await User.update(attributes, { where: { id }, returning: true })
