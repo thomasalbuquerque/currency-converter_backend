@@ -50,4 +50,11 @@ export const convertionService = {
       }
     })
   },
+
+  deleteAll: async () => {
+    await Convertion.destroy({
+      where: {},
+      truncate: true
+    })
+  },
 }

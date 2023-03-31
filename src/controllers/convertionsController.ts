@@ -63,4 +63,22 @@ export const convertionsController = {
       }
     }
   },
+
+  // DELETE /convertions/
+  deleteAll: async (req: AuthenticatedRequest, res: Response) => {
+
+    try {
+      await convertionService.deleteAll();
+      return res.status(204).send();
+    } catch (err) {
+      if (err instanceof Error) {
+        return res
+          .status(400)
+          .json({
+            message:
+              err.message
+          });
+      }
+    }
+  },
 };

@@ -16,6 +16,7 @@ router.get('/currencies/:id', currenciesController.getRatio)
 
 router.get('/convertions', ensureAuth, convertionsController.index)
 router.post('/convertions', ensureAuth, convertionsController.save)
+router.delete('/convertions/', ensureAuth, convertionsController.deleteAll)
 router.delete('/convertions/:id', ensureAuth, convertionsController.delete)
 
 export { router }
