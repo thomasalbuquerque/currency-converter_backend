@@ -4,9 +4,9 @@ export const sequelize = new Sequelize({
     dialect: 'postgres',
     host: 'localhost',
     port: 5432,
-    database: 'bitcoinconverter_development',
-    username: 'bitcoinconverter',
-    password: 'bitcoinconverter',
+    database: 'currency_converter_development',
+    username: 'currency_converter',
+    password: 'currency_converter',
     define: {
         underscored: true
     }
