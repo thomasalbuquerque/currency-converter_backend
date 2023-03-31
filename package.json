@@ -1,5 +1,5 @@
 {
-  "name": "bitcoinconverter_backend",
+  "name": "currency-converter_backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
