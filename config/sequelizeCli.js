@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const DATABASE_URL = process.env.DATABASE_URL;
 const PGPORT = process.env.PGPORT;
 const PGDATABASE = process.env.PGDATABASE;
