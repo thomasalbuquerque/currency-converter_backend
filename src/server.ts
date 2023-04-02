@@ -3,7 +3,7 @@ import cors from "cors"
 import { adminJs, adminJsRouter } from "./adminjs";
 import { sequelize } from "./database";
 import { router } from "./routes";
-
+//test
 const app = express()
 
 app.use(cors())
