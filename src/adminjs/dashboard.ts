@@ -6,7 +6,7 @@ export const dashboardOptions: {
   component?: string,
   handler?: PageHandler
 } = {
-  component: AdminJS.bundle('./components/Dashboard'),
+  component: AdminJS.bundle('components/Dashboard.tsx'),
   handler: async (req, res, context) => {
     const currencies = await Currency.count()
     const convertions = await Convertion.count()
