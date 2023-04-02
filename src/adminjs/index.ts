@@ -16,7 +16,7 @@ export const adminJs = new AdminJS({
     rootPath: "/admin",
     resources: adminJsResources,
     locale: locale,
-    dashboard: dashboardOptions,
+    // dashboard: dashboardOptions,
     branding: brandingOptions
 })
 

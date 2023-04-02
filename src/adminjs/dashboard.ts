@@ -2,12 +2,12 @@ import AdminJS, { PageHandler } from "adminjs"
 import { Convertion, Currency, User } from "../models"
 import { ComponentLoader } from 'adminjs'
 
-const componentLoader = new ComponentLoader()
+// const componentLoader = new ComponentLoader()
 
-const Components = {
-  Dashboard: componentLoader.add('Dashboard', './components/Dashboard'),
-  // other custom components
-}
+// const Components = {
+//   Dashboard: componentLoader.add('Dashboard', './components/Dashboard'),
+//   // other custom components
+// }
 
 export const dashboardOptions: {
   handler?: PageHandler
