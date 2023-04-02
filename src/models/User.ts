@@ -2,7 +2,7 @@
 
 import { sequelize } from '../database';
 import { DataTypes, Model, Optional } from 'sequelize';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 type CheckPasswordCallback = (err: Error | undefined, isSame: boolean) => void;
 
