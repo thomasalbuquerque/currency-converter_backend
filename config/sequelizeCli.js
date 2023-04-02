@@ -1,4 +1,5 @@
 require("dotenv").config();
+require('pg')
 
 const DATABASE_URL = process.env.DATABASE_URL;
 const PGPORT = process.env.PGPORT;

@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 require("dotenv").config();
+require('pg')
 const DATABASE_URL = process.env.DATABASE_URL;
 const PGPORT = Number(process.env.PGPORT);
 const PGDATABASE = process.env.PGDATABASE;
