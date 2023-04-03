@@ -10,8 +10,6 @@ const pgSession = require('connect-pg-simple')(session);
 
 const app = express()
 
-app.use(cors())
-
 app.use(session({
     store: new pgSession({
         pool: sequelize,
@@ -22,6 +20,8 @@ app.use(session({
     saveUninitialized: false,
     cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 dias de validade para o cookie de sessão
 }));
+
+app.use(cors())
 
 app.use(express.static('public'))
 

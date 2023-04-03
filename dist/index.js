@@ -12,7 +12,6 @@ const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 //const db = require('./config/database'); // Importe suas configurações de banco de dados do arquivo correspondente
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)());
 app.use(session({
     store: new pgSession({
         pool: database_1.sequelize,
@@ -23,6 +22,7 @@ app.use(session({
     saveUninitialized: false,
     cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 dias de validade para o cookie de sessão
 }));
+app.use((0, cors_1.default)());
 app.use(express_1.default.static('public'));
 app.use(express_1.default.json());
 app.use(routes_1.router);
