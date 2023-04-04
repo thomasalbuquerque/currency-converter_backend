@@ -26,19 +26,6 @@ app.use(session({
 }));
 myStore.sync();
 // continue as normal
-//----------------------------------
-/*
-var cookieSession = require('cookie-session')
-
-app.use(cookieSession({
-    name: 'session',
-    keys: ['7483626'],
-
-    // Cookie Options
-    maxAge: 24 * 60 * 60 * 1000 // 24 hours
-}))
-*/
-//----------------------------------
 app.use((0, cors_1.default)());
 app.use(express_1.default.static('public'));
 app.use(express_1.default.json());
