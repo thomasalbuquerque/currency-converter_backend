@@ -5,7 +5,7 @@ import { sequelize } from "./database";
 import { router } from "./routes";
 
 const app = express()
-
+const a = 0;
 // load dependencies  
 const session = require("express-session");
 
