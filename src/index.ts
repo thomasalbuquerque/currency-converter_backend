@@ -5,7 +5,7 @@ import { sequelize } from "./database";
 import { router } from "./routes";
 
 const app = express()
-
+/*
 // load dependencies  
 const session = require("express-session");
 
@@ -27,6 +27,19 @@ app.use(
 );
 myStore.sync()
 // continue as normal
+*/
+
+//----------------------------------
+
+var cookieSession = require('cookie-session')
+
+app.use(cookieSession({
+    name: 'session',
+    keys: ['7483626'],
+
+    // Cookie Options
+    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
 
 app.use(cors())
 
