@@ -3,7 +3,6 @@ import AdminJSExpress from "@adminjs/express"
 import AdminJSSequelize from "@adminjs/sequelize"
 import { sequelize } from "../database"
 import { adminJsResources } from "./resources"
-import bcrypt from 'bcrypt'
 import { locale } from "./locale"
 import { dashboardOptions } from "./dashboard"
 import { brandingOptions } from "./branding"
