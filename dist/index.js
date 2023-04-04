@@ -9,7 +9,6 @@ const adminjs_1 = require("./adminjs");
 const database_1 = require("./database");
 const routes_1 = require("./routes");
 const app = (0, express_1.default)();
-const a = 0;
 // load dependencies  
 const session = require("express-session");
 // initalize sequelize with session store
