@@ -8,20 +8,24 @@ const cors_1 = __importDefault(require("cors"));
 const adminjs_1 = require("./adminjs");
 const database_1 = require("./database");
 const routes_1 = require("./routes");
-const session = require('express-session');
-const pgSession = require('connect-pg-simple')(session);
-//const db = require('./config/database'); // Importe suas configurações de banco de dados do arquivo correspondente
 const app = (0, express_1.default)();
+// load dependencies  
+const session = require("express-session");
+// initalize sequelize with session store
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+// create database, ensure 'sqlite3' in your package.json 
+const myStore = new SequelizeStore({
+    db: database_1.sequelize,
+});
+// configure express 
 app.use(session({
-    store: new pgSession({
-        pool: database_1.sequelize,
-        tableName: 'session'
-    }),
-    secret: 'sua_chave_secreta_aqui',
+    secret: "keyboard cat",
+    store: myStore,
     resave: false,
-    saveUninitialized: false,
-    cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 dias de validade para o cookie de sessão
+    proxy: true, // if you do SSL outside of node.
 }));
+myStore.sync();
+// continue as normal
 app.use((0, cors_1.default)());
 app.use(express_1.default.static('public'));
 app.use(express_1.default.json());

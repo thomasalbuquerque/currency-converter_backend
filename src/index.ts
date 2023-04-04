@@ -4,22 +4,29 @@ import { adminJs, adminJsRouter } from "./adminjs";
 import { sequelize } from "./database";
 import { router } from "./routes";
 
-const session = require('express-session');
-const pgSession = require('connect-pg-simple')(session);
-//const db = require('./config/database'); // Importe suas configurações de banco de dados do arquivo correspondente
-
 const app = express()
 
-app.use(session({
-    store: new pgSession({
-        pool: sequelize,
-        tableName: 'session'
-    }),
-    secret: 'sua_chave_secreta_aqui',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 dias de validade para o cookie de sessão
-}));
+// load dependencies  
+const session = require("express-session");
+
+// initalize sequelize with session store
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
+// create database, ensure 'sqlite3' in your package.json 
+const myStore = new SequelizeStore({
+    db: sequelize,
+});
+// configure express 
+app.use(
+    session({
+        secret: "keyboard cat",
+        store: myStore,
+        resave: false, // we support the touch method so per the express-session docs this should be set to false
+        proxy: true, // if you do SSL outside of node.
+    })
+);
+myStore.sync()
+// continue as normal
 
 app.use(cors())
 
