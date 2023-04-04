@@ -5,7 +5,7 @@ import { sequelize } from "./database";
 import { router } from "./routes";
 
 const app = express()
-/*
+
 // load dependencies  
 const session = require("express-session");
 
@@ -22,15 +22,15 @@ app.use(
         secret: "keyboard cat",
         store: myStore,
         resave: false, // we support the touch method so per the express-session docs this should be set to false
-        proxy: true, // if you do SSL outside of node.
+        //proxy: true, // if you do SSL outside of node.
     })
 );
 myStore.sync()
 // continue as normal
-*/
+
 
 //----------------------------------
-
+/*
 var cookieSession = require('cookie-session')
 
 app.use(cookieSession({
@@ -40,6 +40,8 @@ app.use(cookieSession({
     // Cookie Options
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
+*/
+//----------------------------------
 
 app.use(cors())
 
