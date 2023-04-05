@@ -22,11 +22,11 @@ app.use(
         secret: "keyboard cat",
         store: myStore,
         resave: false, // we support the touch method so per the express-session docs this should be set to false
-        //proxy: true, // if you do SSL outside of node.
+        proxy: true, // if you do SSL outside of node.
         saveUninitialized: false
     })
 );
-// myStore.sync()
+myStore.sync()
 // continue as normal
 
 //

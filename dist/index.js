@@ -22,10 +22,10 @@ app.use(session({
     secret: "keyboard cat",
     store: myStore,
     resave: false,
-    //proxy: true, // if you do SSL outside of node.
+    proxy: true,
     saveUninitialized: false
 }));
-// myStore.sync()
+myStore.sync();
 // continue as normal
 //
 //----------------------------------
