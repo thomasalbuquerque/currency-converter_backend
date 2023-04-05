@@ -26,7 +26,7 @@ app.use(
         saveUninitialized: false
     })
 );
-myStore.sync()
+// myStore.sync()
 // continue as normal
 
 //

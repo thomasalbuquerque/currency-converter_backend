@@ -25,7 +25,7 @@ app.use(session({
     //proxy: true, // if you do SSL outside of node.
     saveUninitialized: false
 }));
-myStore.sync();
+// myStore.sync()
 // continue as normal
 //
 //----------------------------------
