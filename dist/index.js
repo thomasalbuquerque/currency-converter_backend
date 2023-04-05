@@ -21,11 +21,13 @@ const myStore = new SequelizeStore({
 app.use(session({
     secret: "keyboard cat",
     store: myStore,
-    resave: false, // we support the touch method so per the express-session docs this should be set to false
+    resave: false,
     //proxy: true, // if you do SSL outside of node.
+    saveUninitialized: false
 }));
 myStore.sync();
 // continue as normal
+//
 //----------------------------------
 /*
 var cookieSession = require('cookie-session')
