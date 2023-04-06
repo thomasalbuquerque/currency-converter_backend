@@ -8,6 +8,13 @@ import { ensureAuth } from './middlewares/auth'
 
 const router = express.Router()
 
+router.get('/', (req, res) => {
+  return res.json({
+    success: true,
+    message: 'Sucesso!'
+  })
+})
+
 router.post('/auth/register', authController.register)
 router.post('/auth/login', authController.login)
 

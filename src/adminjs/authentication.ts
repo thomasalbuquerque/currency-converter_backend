@@ -1,6 +1,6 @@
 import { AuthenticationOptions } from '@adminjs/express';
 import { User } from '../models';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 export const authenticationOptions: AuthenticationOptions = {
     authenticate: async (email, password) => {
