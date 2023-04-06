@@ -11,6 +11,7 @@ console.log(typeof (PGUSER))
 console.log(typeof (PGPASSWORD))
 export const sequelize = new Sequelize({
     dialect: 'postgres',
+    storage: "./session.sqlite",
     host: PGHOST,
     port: PGPORT,
     database: PGDATABASE,
