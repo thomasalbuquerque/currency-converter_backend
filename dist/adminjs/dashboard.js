@@ -8,8 +8,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.dashboardOptions = void 0;
+const adminjs_1 = __importDefault(require("adminjs"));
 const models_1 = require("../models");
 // const componentLoader = new ComponentLoader()
 // const Components = {
@@ -17,6 +21,7 @@ const models_1 = require("../models");
 //   // other custom components
 // }
 exports.dashboardOptions = {
+    component: adminjs_1.default.bundle('./components/Dashboard'),
     handler: (req, res, context) => __awaiter(void 0, void 0, void 0, function* () {
         const currencies = yield models_1.Currency.count();
         const convertions = yield models_1.Convertion.count();

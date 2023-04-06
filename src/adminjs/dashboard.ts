@@ -10,8 +10,10 @@ import { ComponentLoader } from 'adminjs'
 // }
 
 export const dashboardOptions: {
+  component?: string,
   handler?: PageHandler
 } = {
+  component: AdminJS.bundle('./components/Dashboard'),
   handler: async (req, res, context) => {
     const currencies = await Currency.count()
     const convertions = await Convertion.count()
