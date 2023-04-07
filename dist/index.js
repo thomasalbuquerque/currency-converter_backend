@@ -9,6 +9,7 @@ const adminjs_1 = require("./adminjs");
 const database_1 = require("./database");
 const routes_1 = require("./routes");
 const app = (0, express_1.default)();
+app.use((0, cors_1.default)());
 // load dependencies  
 const session = require("express-session");
 // initalize sequelize with session store
@@ -23,6 +24,7 @@ app.use(session({
     store: myStore,
     resave: false,
     proxy: true,
+    cookie: { secure: true, maxAge: 420000 },
     saveUninitialized: false
 }));
 myStore.sync();
@@ -38,7 +40,6 @@ app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
 */
-app.use((0, cors_1.default)());
 app.use(express_1.default.static('public'));
 app.use(express_1.default.json());
 app.use(routes_1.router);
