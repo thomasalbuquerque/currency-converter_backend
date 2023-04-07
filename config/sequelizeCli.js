@@ -8,6 +8,12 @@ const PGHOST = process.env.PGHOST;
 const PGUSER = process.env.PGUSER;
 const PGPASSWORD = process.env.PGPASSWORD;
 
+// const PGPORT = 5432;
+// const PGDATABASE = 'currency_converter_development';
+// const PGHOST = 'localhost';
+// const PGUSER = 'currency_converter';
+// const PGPASSWORD = 'currency_converter';
+
 export const development = {
     dialect: 'postgres',
     host: PGHOST,

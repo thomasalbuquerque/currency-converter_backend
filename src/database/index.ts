@@ -7,8 +7,13 @@ const PGDATABASE = process.env.PGDATABASE;
 const PGHOST = process.env.PGHOST;
 const PGUSER = process.env.PGUSER;
 const PGPASSWORD = process.env.PGPASSWORD;
-console.log(typeof (PGUSER))
-console.log(typeof (PGPASSWORD))
+
+// const PGPORT = 5432;
+// const PGDATABASE = 'currency_converter_development';
+// const PGHOST = 'localhost';
+// const PGUSER = 'currency_converter';
+// const PGPASSWORD = 'currency_converter';
+
 export const sequelize = new Sequelize({
     dialect: 'postgres',
     storage: "./session.sqlite",
@@ -21,13 +26,16 @@ export const sequelize = new Sequelize({
         underscored: true
     }
 })
+
+// import { Sequelize } from "sequelize";
+
 // export const sequelize = new Sequelize({
 //     dialect: 'postgres',
-//     host: 'containers-us-west-19.railway.app',
-//     port: 7269,
-//     database: 'railway',
-//     username: 'postgres',
-//     password: 'PVWTw6oMzKCaEQqtcGV6',
+//     host: 'localhost',
+//     port: 5432,
+//     database: 'onebitflix_development',
+//     username: 'onebitflix',
+//     password: 'onebitflix',
 //     define: {
 //         underscored: true
 //     }
