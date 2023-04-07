@@ -8,6 +8,10 @@ const app = express()
 
 app.use(cors())
 
+app.use(express.static('public'))
+
+app.use(express.json())
+
 // load dependencies  
 const session = require("express-session");
 
@@ -44,10 +48,6 @@ app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }))
 */
-
-app.use(express.static('public'))
-
-app.use(express.json())
 
 app.use(router)
 
