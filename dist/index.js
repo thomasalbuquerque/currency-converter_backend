@@ -12,24 +12,47 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.static('public'));
 app.use(express_1.default.json());
-// load dependencies  
-const session = require("express-session");
-// initalize sequelize with session store
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
-// create database, ensure 'sqlite3' in your package.json 
-const myStore = new SequelizeStore({
+// // load dependencies  
+// const session = require("express-session");
+// // initalize sequelize with session store
+// const SequelizeStore = require("connect-session-sequelize")(session.Store);
+// // create database, ensure 'sqlite3' in your package.json 
+// const myStore = new SequelizeStore({
+//     db: sequelize,
+// });
+// // configure express 
+// app.use(
+//     session({
+//         secret: "keyboard cat",
+//         store: myStore,
+//         resave: false, // we support the touch method so per the express-session docs this should be set to false
+//         proxy: true, // if you do SSL outside of node. 
+//         cookie: { secure: true, maxAge: 420000 },
+//         saveUninitialized: false
+//     })
+// );
+// myStore.sync()
+const cookieParser = require('cookie-parser');
+const expressSession = require('express-session');
+const SessionStore = require('express-session-sequelize')(expressSession.Store);
+// const Sequelize = require('sequelize');
+// const myDatabase = new Sequelize('database', 'username', 'password', {
+//     host: 'localhost',
+//     dialect: 'mysql',
+// });
+// // create database, ensure 'sqlite3' in your package.json 
+const sequelizeSessionStore = new SessionStore({
     db: database_1.sequelize,
 });
-// configure express 
-app.use(session({
-    secret: "keyboard cat",
-    store: myStore,
+app.use(cookieParser());
+app.use(expressSession({
+    secret: 'keep it secret, keep it safe.',
+    store: sequelizeSessionStore,
     resave: false,
+    saveUninitialized: false,
     proxy: true,
     cookie: { secure: true, maxAge: 420000 },
-    saveUninitialized: false
 }));
-myStore.sync();
 // continue as normal
 /*
 var cookieSession = require('cookie-session')
