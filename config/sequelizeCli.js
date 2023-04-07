@@ -1,5 +1,5 @@
 require("dotenv").config();
-import 'pg';
+require('pg')
 
 const DATABASE_URL = process.env.DATABASE_URL;
 const PGPORT = process.env.PGPORT;
@@ -14,13 +14,23 @@ const PGPASSWORD = process.env.PGPASSWORD;
 // const PGUSER = 'currency_converter';
 // const PGPASSWORD = 'currency_converter';
 
-export const development = {
-    dialect: 'postgres',
-    host: PGHOST,
-    port: PGPORT,
-    database: PGDATABASE,
-    username: PGUSER,
-    password: PGPASSWORD,
+module.exports = {
+    development: {
+        dialect: 'postgres',
+        host: PGHOST,
+        port: PGPORT,
+        database: PGDATABASE,
+        username: PGUSER,
+        password: PGPASSWORD,
+    },
+    production: {
+        dialect: 'postgres',
+        host: PGHOST,
+        port: PGPORT,
+        database: PGDATABASE,
+        username: PGUSER,
+        password: PGPASSWORD,
+    }
 };
 // module.exports = {
 //     development: {
