@@ -1,3 +1,5 @@
+import dotenv from "dotenv"
+dotenv.config()
 import express from "express";
 import cors from "cors"
 import { adminJs, adminJsRouter } from "./adminjs";
@@ -36,9 +38,9 @@ app.use(express.json())
 // );
 // myStore.sync()
 
-const cookieParser = require('cookie-parser');
-const expressSession = require('express-session');
-const SessionStore = require('express-session-sequelize')(expressSession.Store);
+// const cookieParser = require('cookie-parser');
+// const expressSession = require('express-session');
+// const SessionStore = require('express-session-sequelize')(expressSession.Store);
 
 // const Sequelize = require('sequelize');
 // const myDatabase = new Sequelize('database', 'username', 'password', {
@@ -47,19 +49,19 @@ const SessionStore = require('express-session-sequelize')(expressSession.Store);
 // });
 // // create database, ensure 'sqlite3' in your package.json 
 
-const sequelizeSessionStore = new SessionStore({
-    db: sequelize,
-});
+// const sequelizeSessionStore = new SessionStore({
+//     db: sequelize,
+// });
 
-app.use(cookieParser());
-app.use(expressSession({
-    secret: 'keep it secret, keep it safe.',
-    store: sequelizeSessionStore,
-    resave: false,
-    saveUninitialized: false,
-    proxy: true,
-    cookie: { secure: true, maxAge: 420000 },
-}));
+// app.use(cookieParser());
+// app.use(expressSession({
+//     secret: 'keep it secret, keep it safe.',
+//     store: sequelizeSessionStore,
+//     resave: false,
+//     saveUninitialized: false,
+//     proxy: true,
+//     cookie: { secure: true, maxAge: 420000 },
+// }));
 // continue as normal
 
 /*
