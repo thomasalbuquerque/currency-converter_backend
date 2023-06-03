@@ -1,4 +1,5 @@
 require("dotenv").config()
+require('pg');
 
 module.exports = {
     development: {
@@ -10,7 +11,6 @@ module.exports = {
 }
 
 // require("dotenv").config();
-// require('pg');
 // // const { DATABASE_URL } = require("./environment.js");
 
 // const env = require("env-var");
