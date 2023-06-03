@@ -1,5 +1,5 @@
 require("dotenv").config()
-require('pg');
+// require('pg');
 
 module.exports = {
     development: {
