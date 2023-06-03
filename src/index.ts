@@ -78,7 +78,7 @@ app.use(cookieSession({
 
 app.use(router)
 
-app.use(adminJs.options.rootPath, adminJsRouter)
+// app.use(adminJs.options.rootPath, adminJsRouter)
 
 const PORT = process.env.PORT || 3000
 
