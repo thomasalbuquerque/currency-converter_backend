@@ -1,5 +1,3 @@
-// src/routes.ts
-
 import express from 'express'
 import { authController } from './controllers/authController'
 import { convertionsController } from './controllers/convertionsController'
