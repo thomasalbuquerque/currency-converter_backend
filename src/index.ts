@@ -15,13 +15,13 @@ app.use(express.json())
 
 import session = require("express-session")
 import connectSession from "connect-session-sequelize"
-import { ADMINJS_COOKIE_PASSWORD } from "./config/environment";
+import { COOKIE_PASSWORD } from "./config/environment";
 const SequelizeStore = connectSession(session.Store)
 const store = new SequelizeStore({ db: sequelize })
 
 app.use(
     session({
-        secret: ADMINJS_COOKIE_PASSWORD,
+        secret: COOKIE_PASSWORD,
         store: store,
         resave: false, // we support the touch method so per the express-session docs this should be set to false
         proxy: true, // if you do SSL outside of node. 
