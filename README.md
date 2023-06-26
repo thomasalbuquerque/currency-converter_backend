@@ -69,8 +69,8 @@ Next, follow the steps below:
 7. To configure the required environment variables for the project, create a file named '.env' within the project's root directory. Inside the '.env' file, specify the necessary environment variables as shown below:
 ```bash
     DATABASE_URL=postgres://coincalc_user:coincalc_user_password@localhost:5432/coincalc_db
-    COOKIE_PASSWORD=ABCDEFGJK00000anythingyouwant00000LMNOPQRST
-    JWT_KEY=0123456789anythingyouwant0123456789
+    COOKIE_PASSWORD=ABCDEFGJK00000anythingYouWant00000LMNOPQRST
+    JWT_KEY=0123456789anythingYouWant0123456789
 ```
 Note: DATABASE_URL follows the structure: DATABASE_URL=postgres://db_user_name:db_user_password@localhost:5432/db_name , with 5432 generally being the default port for local databases.
 
