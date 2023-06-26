@@ -44,29 +44,29 @@ Next, follow the steps below:
     npm install
 ```
 
-4. Install PostgreSQL. To install on Linux, please follow the steps below. If you are using Windows or Mac, you can refer to the following tutorial for installation instructions:https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql/
+4. Install PostgreSQL. To install on Linux, please follow the steps below. If you are using Windows or Mac, you can refer to the following tutorial for installation instructions: https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql/
 ### Install on Linux
-|Step|Description|Command| 
-|-||-|-|
-|1|| Create the repository configurations | ```sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'``` |
-|2|| Import the repository's signature key | ```$ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc \| sudo apt-key add -``` |
-|3|| Update the package list | ```sudo apt-get update``` |
-|4|| Connect to the postgres user (created during installation) of the database       | ```sudo -i -u postgres``` |
-|5|| (enter the password you previously chose) ||
-|6|| Access the command-line tool of the database | ```psql``` |     
-|7|| For future access, simply run the following command | ```sudo -i -u postgres psql``` |
+| Step | Description | Command |
+| --- | --- | --- |
+| 1 | Create the repository configurations | `sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'` |
+| 2 | Import the repository's signature key | `$ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc \| sudo apt-key add -` |
+| 3 | Update the package list | `sudo apt-get update` |
+| 4 | Connect to the postgres user (created during installation) of the database | `sudo -i -u postgres` |
+| 5 | (enter the password you previously chose) | |
+| 6 | Access the command-line tool of the database | `psql` |
+| 7 | For future access, simply run the following command | `sudo -i -u postgres psql` |
 
 5. With the terminal open, after runned sudo -i -u postgres psql to access the command-line tool, create an user with password and CREATEDB role
 ```bash
     CREATE USER coincalc_user WITH PASSWORD 'coincalc_user_password' CREATEDB;
 ```
 
-6. Create a database with the recent created user as owner
+6. Create a database with the recently created user set as the owner
 ```bash
     CREATE DATABASE coincalc_db OWNER coincalc_user;
 ```
 
-7. Create a file within project's root named '.env', and inside it you put the required Environment Variables, as below:
+7. To configure the required environment variables for the project, create a file named '.env' within the project's root directory. Inside the '.env' file, specify the necessary environment variables as shown below:
 ```bash
     DATABASE_URL=postgres://coincalc_user:coincalc_user_password@localhost:5432/coincalc_db
     COOKIE_PASSWORD=ABCDEFGJK00000anythingyouwant00000LMNOPQRST
