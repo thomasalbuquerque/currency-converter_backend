@@ -1,8 +1,8 @@
 ## General Information
 
-This is a Currency Converter backend repository for an application where users can select a currency to convert from and another currency to convert to. They can enter the amount they wish to convert, and the result is automatically displayed.
+This repository contains the backend for a Currency Converter application. Users can select a currency to convert from and another currency to convert to. They can enter the desired amount to be converted, and the application will automatically display the result.
 
-Additionally, the application includes a feature that allows users to store their conversions. It has a login system and provides a list of all conversions made by the logged-in user. Each conversion entry includes the currencies, amounts, and the date and time it occurred.
+Additionally, the application includes a feature that enables users to save their conversions. It incorporates a login system and provides a list of all conversions made by the logged-in user. Each conversion entry includes the currencies, amounts, and the date and time of the conversion.
 
 IMPORTANT: After setting up the database and backend application as instructed in the README of this repository, you will then need to configure the frontend part of the project by following the instructions provided in the frontend repository: https://github.com/thomasalbuquerque/currency-converter_frontend
 
@@ -18,10 +18,10 @@ This project was made with:
  - Typescript
  - [Express](https://www.npmjs.com/package/express)
  - [Sequelize](https://www.npmjs.com/package/sequelize)
- - [Connect-session-sequelize](https://github.com/everapihq/connect-session-sequelize)
+ - [Connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
  - [SequelizeCli](https://www.npmjs.com/package/sequelize-cli)
  - [Pg](https://www.npmjs.com/package/pg)
- - [Dotenv](https://www.npmjs.com/package/dovenv)
+ - [Dotenv](https://www.npmjs.com/package/dotenv)
  - [Env-var](https://www.npmjs.com/package/env-var)
  - [Bcryptjs](https://www.npmjs.com/package/bcryptjs)
  - [Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
