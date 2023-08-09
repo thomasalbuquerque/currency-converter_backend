@@ -29,7 +29,7 @@ This project was made with:
  - [Ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
 
 ## Installation
-To begin, make sure you have Node.js with npm installed on your system. If you don't have them, please refer to the [official documentation](https://nodejs.org/en/download) for instructions on how to install them.
+To begin, make sure you have Node.js 18.x or newer installed on your system. If you don't have it, please refer to the [official documentation](https://nodejs.org/en/download) for instructions on how to install it.
 
 Next, follow the steps below:
 
